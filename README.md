@@ -110,7 +110,7 @@ After you're finished please remove all the comments and instructions!
 
 > Add a link to your deployed project.
 
-- [Live Demo Link coming soon](https://birre-app.onrender.com/)
+- [Live Demo Link](https://birre-app.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -232,8 +232,11 @@ If you like this project...
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 > Give credit to everyone who inspired your codebase.
-
 I would like to thank...
+> Original design idea by [Gregoire Vella on Behance.](https://www.behance.net/gregoirevella)
+
+> the design [Design here](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
