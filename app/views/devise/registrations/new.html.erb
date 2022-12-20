@@ -1,0 +1,38 @@
+<div class="flex flex-col h-full">
+<div class="flex flex-row w-[vw] bg-[#3778c2] p-3 text-white items-center justify-center">
+  <div class="fixed left-3">
+    <%= link_to '/', class: "" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+</svg>
+</div>
+    <% end %>
+    <p class="flex flex-row place-self-center">Sign Up</p>
+
+  </div>
+<div class="flex flex-col justify-center justify-items-center h-full p-5">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"flex flex-col justify-center justify-items-center") do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name",
+      class: "w-full p-2 mt-3 mb-1 border-solid border-2", placeholder: "Name"
+    %>
+
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",
+      class: "w-full p-2 mb-1 border-solid border-2", placeholder: "Email"
+    %>
+
+    <%= f.password_field :password, autocomplete: "new-password",
+      class: "w-full p-2 mb-1 border-solid border-2", placeholder: "Password"
+    %>
+
+
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",
+      class: "w-full p-2 mb-1 border-solid border-2", placeholder: "Password Confirmation"
+    %>
+    <div class="border-solid border-2 flex justify-center p-3 bg-[#5fb523] text-white">
+      <%= f.submit "Sign Up", class:"" %>
+    </div>
+  </div>
+<% end %>
+
+</div>

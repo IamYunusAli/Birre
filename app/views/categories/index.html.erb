@@ -1,0 +1,36 @@
+<div class="flex flex-col h-full">
+  <div class="flex flex-row w-[vw] bg-[#3778c2] p-3 text-white items-center justify-center">
+    <p class="flex flex-row place-self-center">CATEGORIES</p>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class:"fixed right-3 flex flex-row place-self-center" %>
+  </div>
+
+  <div>
+    <% @categories.each do |category| %>
+      <%= link_to category_deals_path(category) do %>
+  <div class="border-solid border-2 p-2 m-1 flex flex-row" id="<%= dom_id category %>" class="">
+  <%= link_to category_deals_path(category), class: "flex flex-row justify-between w-full" do %>
+    <%= image_tag(category.icon, size: "80x80", alt: "Group") %>
+
+    <div class="flex flex-col justify-between">
+      <p>
+        Category:
+        <strong><%= category.name %></strong>
+      </p>
+
+      <p>
+        Total Transactions:
+        <strong>$<%= category.deals.sum(:amount) %></strong>
+      </p>
+    </div>
+  <% end %>
+</div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="fixed bottom-0 p-3 bg-[#5fb523] text-white w-full">
+    <button class="p-3 border-solid border-2 w-full" >
+      <%= link_to "ADD CATEGORY", new_category_path %>
+    </button>
+  </div>
+</div>
