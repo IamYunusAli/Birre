@@ -1,0 +1,43 @@
+<div class="">
+   <div class="flex flex-row w- bg-[#3778c2] p-3 text-white items-center justify-center">
+    <div class="fixed left-3">
+    <%= link_to categories_path, class: "" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+  </svg>
+  </div>
+    <% end %>
+    <p class="flex flex">Transactions</p>
+  </div>
+
+  <div class="">
+    <p class="border-solid border-b-2 p-2 flex flex-row justify-between">
+      Total Amount:
+      <strong>$<%=@total_amount %></strong>
+    </p>
+  </div>
+
+  <div>
+    <% @deals.each do |deal| %>
+      <div id="<%= dom_id deal %>" class="">
+      <div class="p-3 flex flex-col gap-4 border-solid border-2">
+    <p>
+      <strong>Name:</strong>
+      <%= deal.name %>
+    </p>
+
+    <p>
+      <strong>Amount:</strong>
+      $<%=  + deal.amount %>
+    </p>
+  </div>
+</div>
+    <% end %>
+  </div>
+
+  <div class="fixed bottom-0 p-3 bg-[#5fb523] text-white w-full">
+    <button class="p-3 border-solid border-2 w-full">
+      <%= link_to "Add Transaction", new_category_deal_path %>
+    </button>
+  </div>
+</div>

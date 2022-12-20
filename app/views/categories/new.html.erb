@@ -1,0 +1,42 @@
+
+<div class="flex flex-col h-full w-full">
+ <div class="flex flex-row w- bg-[#3778c2] p-3 text-white items-center justify-center">
+ <div class="fixed left-3">
+    <%= link_to categories_path, class: "" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+  </svg>
+  </div>
+    <% end %>
+    <p class="flex flex">CATEGORIES</p>
+  </div>
+
+  <% if @category.errors.any? %>
+  <div style="color: red">
+    <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+    <ul>
+      <% @category.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<div class="flex flex-col justify-center justify-items-center h-full p-5">
+<%= form_with(model: @category, class: "flex flex-col justify-center justify-items-center" ) do |form| %>
+
+  <%= form.text_field :name, autofocus: true, autocomplete: "name",
+    class: "w-full p-2 mb-1 border-solid border-2", placeholder: "Name"
+  %>
+
+  <div class="w-100 p-2 mb-1 bg-white rounded">
+    <%= form.label :icon, style: "w-full p-2 mb-1 border-solid border-2" %>
+    <%= form.file_field :icon %>
+  </div>
+</div>
+  <div class="fixed bottom-0 p-3 bg-[#5fb523] text-white w-full">
+    <%= form.submit "Add", class: "p-3 border-solid border-2 w-full" %>
+  </div>
+<% end %>
+
+</div>
