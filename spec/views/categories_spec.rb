@@ -19,8 +19,7 @@ RSpec.describe 'groups', type: :system do
 
   it 'show the number of transation in each category' do
     visit categories_path
-    expect(page).to have_content('Total Transactions: 1')
-    expect(page).to have_content('Total Transactions: 0')
+    expect(page).to have_content('Total Transactions: $50')
   end
 
   it 'clicking on Add category will send you too the form' do
