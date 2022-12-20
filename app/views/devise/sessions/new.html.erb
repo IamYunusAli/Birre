@@ -1,0 +1,41 @@
+<div class="flex flex-col h-full">
+<div class="flex flex-row w-[vw] bg-[#3778c2] p-3 text-white items-center justify-center ">
+<div class="fixed left-3">
+  <%= link_to '/', class: "" do %>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+</svg>
+  <% end %>
+  </div>
+  <p class="flex flex-row place-self-center">LOGIN</p>
+
+</div>
+<div class="flex flex-col justify-center justify-items-center h-full p-5">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), class:"flex flex-col justify-center justify-items-center") do |f| %>
+
+
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full p-2 mt-3 mb-1 border-solid border-2",
+    placeholder: "Email"
+  %>
+
+  <%= f.password_field :password, autocomplete: "current-password", class: "w-full p-2 border-solid border-2",
+    placeholder: "Password"
+  %>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field my-3 mx-2">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+   <div class="border-solid border-2 flex justify-center p-3 bg-[#5fb523] text-white">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to "Forgot password?", new_password_path(resource_name) %><br />
+</div>
+</div>
+</div>
+
