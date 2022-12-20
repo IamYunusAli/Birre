@@ -7,8 +7,8 @@ class Ability
     return unless user.present?
 
     can :read, :all
-    can :manage, Category, user: user
-    can :manage, Deal, user: user
+    can(:manage, Category, user:)
+    can(:manage, Deal, user:)
     return unless user.admin?
 
     can :manage, :all

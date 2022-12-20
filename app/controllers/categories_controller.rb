@@ -13,13 +13,14 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     @category.author = current_user
     if @category.save
-        redirect_to categories_path, notice: 'Category was successfully created.'
-      else
-        render :new, status: :unprocessable_entity
-      end
+      redirect_to categories_path, notice: 'Category was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
+  end
 
   private
+
   def set_group
     @category = Category.find(params[:id])
   end

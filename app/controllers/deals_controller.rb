@@ -30,7 +30,6 @@ class DealsController < ApplicationController
 
   private
 
-
   def set_deal
     @deal = Deal.find(params[:id])
     @category = Category.find(params[:category_id])

@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'purchases', type: :system do
   before(:example) do
-    @user = User.create!(email: 'Yunus@gmail.com', name: 'Yunus', password: '12345678', password_confirmation: '12345678')
+    @user = User.create!(email: 'Yunus@gmail.com', name: 'Yunus', password: '12345678',
+                         password_confirmation: '12345678')
     file = fixture_file_upload(Rails.root.join('public', 'apple-touch-icon.png'), 'image/png')
     @category = Category.create!(name: 'food', author: User.first, icon: file)
     @category1 = Category.create!(name: 'cars', author: User.first, icon: file)
